@@ -28,12 +28,14 @@ const Login = () => {
         e.preventDefault();
    try {
     setLoading(true)
-    const res = await axios.post(`${process.env.VITE_API_BASE_URL}/api/v1/user/login`,input,{
+    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,input,{
         headers:{
             'Content-Type':'application/json'
         },
         withCredentials:true
     }) ;
+    console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+
     if(res.data.success){
         dispatch(setAuthUser(res.data.user));
         navigate("/patient-dashboard");
