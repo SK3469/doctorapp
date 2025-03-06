@@ -14,13 +14,27 @@ const doctors = [{
   date: "11 sept,2024",
   patient: "ALINA JOE",
   rating: 4.8
+}
+, {
+  name: "Dr. Jane",
+  department: "Dentistry",
+  date: "11 sept,2024",
+  patient: "ALINA JOE",
+  rating: 4.8
+}
+, {
+  name: "Dr. Jane",
+  department: "Dentistry",
+  date: "11 sept,2024",
+  patient: "ALINA JOE",
+  rating: 4.8
 }]
 const MyAppointment = () => {
   return (
     <>
-      <Navbar />
-      <div className='bg-gray-100 w-full mx-auto  '>
-        <div className='flex items-center justify-center'>
+      <Navbar  />
+      <div className='bg-gray-100 max-w-6xl mx-auto  '>
+        <div className='flex  items-center justify-center'>
           <Select className=" ">
             <SelectTrigger className="w-[80px] border-none  bg-gray-300 rounded-md mt-4 shadow-md">
               <SelectValue placeholder="2024" />
@@ -37,10 +51,10 @@ const MyAppointment = () => {
             </SelectContent>
           </Select>
         </div>
-        <div className='grid grid-cols-2 mx-auto mt-5'>
+        <div className='grid md:grid-cols-2 mx-auto mt-5 p-4 gap-4 absolute -z-10'>
           {
             doctors.map((doctor) => (
-              <div key={doctor.name} className="max-w-3xl cols-span-1 border rounded-md shadow-md mx-auto">
+              <div key={doctor.name} className="max-w-3xl cols-span-1 border rounded-md shadow-md mx-auto md:ml-8">
                 <div className=' flex relative'>
                   <img src='https://c1.wallpaperflare.com/preview/316/518/391/medicine-stethoscope-doctor-dr.jpg' width={500} className='h-[250px] object-cover ' />
                   <h1 className='absolute top-0 right-0 text-blue-600 z-10 p-2 '>{doctor.date}</h1>

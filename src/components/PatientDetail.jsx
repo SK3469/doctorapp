@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Label } from './ui/label'
 import { useDispatch, useSelector } from 'react-redux'
-import { store } from '@/redux/store'
-import { useNavigate } from 'react-router-dom'
 import { Button } from './ui/button'
 import { Loader2 } from 'lucide-react'
 import axios from 'axios'
@@ -24,8 +22,6 @@ const PatientDetail = () => {
         state: user?.state || "",
         zipcode: user?.zipcode || ""
     });
-    
-    const navigate = useNavigate()
     const dispatch = useDispatch()
    
     const updateFormHandler = (e) => {

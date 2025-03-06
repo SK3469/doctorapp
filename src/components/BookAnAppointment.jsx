@@ -22,19 +22,19 @@ const BookAnAppointment = () => {
   };
   return (<>
     <Navbar />
-    <div className='w-full h-screen bg-gray-100 mx-auto flex justify-center  '>
-      <form action="">
-      <div className='bg-white p-4 rounded-[7px] shadow-lg max-w-xl flex flex-col gap-2 my-12'>
-        <h1 className='font-bold text-2xl'>Book an Appointment</h1>
-        <div className='grid grid-cols-2 gap-12 my-2 '>
-          <div>
+    <div className='w-full max-h-screen bg-gray-100 mx-auto flex justify-center  '>
+      <form action="" className='mx-4 md:mx-0'>
+      <div className='bg-white p-7  rounded-[7px] shadow-lg max-w-xl flex flex-col gap-2 my-12'>
+        <h1 className='font-bold text-4xl text-violet-700'>Book an Appointment</h1>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 my-2 '>
+          <div className=''>
             <Label>Select Data</Label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
                   variant={"outline"}
                   className={cn(
-                    "w-[280px] justify-start text-left font-normal border border-gray-300 rounded-[4px]",
+                    "w-full justify-start text-left font-normal border border-gray-300 rounded-[4px]",
                     !date && "text-muted-foreground"
                   )}
                 >

@@ -34,7 +34,7 @@ const Login = () => {
         },
         withCredentials:true
     }) ;
-    console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+    // console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
 
     if(res.data.success){
         dispatch(setAuthUser(res.data.user));
@@ -55,13 +55,13 @@ const Login = () => {
 
     return (
         <div className='  bg-red-100 h-[90vh] flex items-center justify-center'>
-            <div className='bg-white  mx-5 md:mx-0 h-[65vh] md:w-[30vw] rounded-xl shadow-md'>
+            <div className='bg-white  mx-5  md:mx-0  rounded-xl shadow-md'>
                 <div className='bg-violet-700 h-20 rounded-t-xl flex justify-center items-center gap-3 text-white '>
                     <Tv2 size={56} />
                     <h1 className='text-xl font-bold'>Patient system</h1>
                 </div>
                 <form onSubmit={loginHandler}>
-                    <div className='flex flex-col justify-center gap-3 p-7'>
+                    <div className='flex flex-col justify-center gap-3 p-9  '>
                         <h1 className='font-bold text-center my-4'>Login to Your Account</h1>
                         <input
                             type='email'
@@ -89,7 +89,7 @@ const Login = () => {
                         </span>
 
                     </div>
-                    <div className='w-full text-center'>
+                    <div className='w-full text-center p-5 '>
                         {
                             loading ? (<Button className="w-1/3 bg-violet-700 text-white rounded-[7px]">
                                 <Loader2 className='w-4 h-4 animate-spin'  /> Please wait.</Button>) :
