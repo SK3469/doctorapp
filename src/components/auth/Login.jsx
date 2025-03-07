@@ -17,39 +17,39 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const {user} = useSelector(store=>store.auth)
+    const { user } = useSelector(store => store.auth)
     console.log(user)
 
 
     const changeEventHandler = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value })
     }
-    const loginHandler =async (e) => {
+    const loginHandler = async (e) => {
         e.preventDefault();
-   try {
-    setLoading(true)
-    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,input,{
-        headers:{
-            'Content-Type':'application/json'
-        },
-        withCredentials:true
-    }) ;
-    // console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+        try {
+            setLoading(true)
+            const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`, input, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            });
+            // console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
 
-    if(res.data.success){
-        dispatch(setAuthUser(res.data.user));
-        navigate("/patient-dashboard");
-        setInput({
-            email:"",
-            password:""
-        })
-    }
-   } catch (error) {
-    console.log(error);
-    toast.error(error?.response?.message)
-   } finally{
-    setLoading(false)
-   }
+            if (res.data.success) {
+                dispatch(setAuthUser(res.data.user));
+                navigate("/patient-dashboard");
+                setInput({
+                    email: "",
+                    password: ""
+                })
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error(error?.response?.message)
+        } finally {
+            setLoading(false)
+        }
     }
 
 
@@ -91,10 +91,10 @@ const Login = () => {
                     </div>
                     <div className='w-full text-center p-5 '>
                         {
-                            loading ? (<Button className="w-1/3 bg-violet-700 text-white rounded-[7px]">
-                                <Loader2 className='w-4 h-4 animate-spin'  /> Please wait.</Button>) :
+                            loading ? (<button className=" px-4 bg-violet-700 text-white rounded-[7px] flex items-center gap-2 mx-16 p-1">
+                                <Loader2 className='w-4 h-4 animate-spin' /> Please wait.</button>) :
                                 (
-                                    <Button type='submit' className="w-1/3 bg-violet-700 text-white rounded-[7px]">Login</Button>
+                                    <button type='submit' className="w-1/3 bg-violet-700 text-white p-1 rounded-[7px]">Login</button>
                                 )
                         }
                     </div>
