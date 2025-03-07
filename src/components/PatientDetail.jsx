@@ -66,7 +66,7 @@ const PatientDetail = () => {
             <div className='p-10'>
                 <div className='w-2/3 bg-white p-5 rounded-[9px] shadow-lg  '>
                     <h1 className='font-bold  border-b-2 pb-2'>Patient Details</h1>
-                    <div className='grid grid-cols-3 gap-8 p-2 '>
+                    <div className='grid md:grid-cols-3 gap-8 p-2 '>
                         <div className='col-span-1 p-1'>
                             <Label>First Name</Label>
                             <input
